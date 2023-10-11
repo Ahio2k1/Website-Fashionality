@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    /* cart */
+    .cart-header {
+        font-weight: bold;
+        font-size: 1.25em;
+        color: #333;
+    }
+
+    .cart-column {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid black;
+        margin-right: 1.5em;
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .cart-row {
+        display: flex;
+    }
+
+    .cart-item {
+        width: 45%;
+    }
+
+    .cart-price {
+        width: 20%;
+        font-size: 1.2em;
+        color: #333;
+    }
+
+    .cart-quantity {
+        width: 35%;
+    }
+
+    .cart-item-title {
+        color: #333;
+        margin-left: .5em;
+        font-size: 1.2em;
+    }
+
+    .cart-item-image {
+        width: 75px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .btn-danger {
+        color: white;
+        background-color: #EB5757;
+        border: none;
+        border-radius: .3em;
+        font-weight: bold;
+    }
+
+        .btn-danger:hover {
+            background-color: #CC4C4C;
+        }
+
+    .cart-quantity-input {
+        height: 34px;
+        width: 50px;
+        border-radius: 5px;
+        border: 1px solid #56CCF2;
+        background-color: #eee;
+        color: #333;
+        padding: 0;
+        text-align: center;
+        font-size: 1.2em;
+        margin-right: 25px;
+    }
+
+    .cart-row:last-child {
+        border-bottom: 1px solid black;
+    }
+
+        .cart-row:last-child .cart-column {
+            border: none;
+        }
+
+    .cart-total {
+        text-align: end;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .cart-total-title {
+        font-weight: bold;
+        font-size: 1.5em;
+        color: black;
+        margin-right: 20px;
+    }
+
+    .cart-total-price {
+        color: #333;
+        font-size: 1.1em;
+    }
+
+    .modal-footer {
+        display: flex;
+        border-top: 1px solid #aaaaaa;
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: flex-end;
+        border-top: 1px solid #aaaaaa;
+        padding: 1rem;
+    }
+
+        .modal-footer > :not(:first-child) {
+            margin-left: .25rem;
+        }
+
+    .btn {
+        cursor: pointer;
+        outline: none;
+        font-weight: 400;
+        line-height: 1.25;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border-radius: .25rem;
+        transition: all .2s ease-in-out;
+    }
+
+
+
+    .btn-primary {
+        color: #fff;
+        background-color: #0275d8;
+        border-color: #0275d8;
+    }
+</style>
+<!-- content -->
+<body>
+    <script language="javascript">
+
+    </script>
+    <font color=black><center><h1>Giỏ hàng</h1></center></font><br><br>
+    <div class="modal-body">
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+            <span class="cart-price cart-header cart-column">Giá</span>
+            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+        </div>
+        <div class="cart-items">
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="https://cdn.shopify.com/s/files/1/0087/6193/3920/products/1904710_BLAC_1_720x.jpg?v=1618439716" width="100" height="100">
+                    <span class="cart-item-title">Sản phẩm 1</span>
+                </div>
+                <span class="cart-price cart-column">200.000đ</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger" type="button">Xóa</button>
+                </div>
+            </div>
+            <div class="cart-row">
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="https://cdn.shopify.com/s/files/1/0087/6193/3920/products/1904654_BLAC_1_720x.jpg?v=1612378372" width="100" height="100">
+                    <span class="cart-item-title">Sản phẩm 2</span>
+                </div>
+                <span class="cart-price cart-column">200.000đ</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="2">
+                    <button class="btn btn-danger" type="button">Xóa</button>
+                </div>
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Tổng Cộng:</strong>
+                <span class="cart-total-price">400.000đ</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary order">Thanh Toán</button>
+            </div>
+        </div>
+
+</body>
+

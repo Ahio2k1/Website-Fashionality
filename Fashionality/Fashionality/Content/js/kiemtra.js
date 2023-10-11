@@ -1,0 +1,31 @@
+function validate() {
+    
+    var u = document.getElementById("username").value;
+    var p1 = document.getElementById("password").value;
+    var p2 = document.getElementById("password-repeat").value;
+   
+  
+    if(u== "") {
+    alert("Vui lòng nhập tên!");
+    return falord
+    }
+    if(p1 == "") {
+    alert("Vui lòng nhập mật khẩu!");
+    return false;
+    }
+    if(p2 == "") {
+    alert("Vui lòng xác minh mật khẩu!");
+    return false;
+    }
+    document.write("Chào bạn : <B> " + u + "</B>");
+    document.write("<BR>"); // Xuống dòng
+    document.write("Password của bạn là : <U> " + p1 + "</U>");
+  
+
+    alert("Đăng kí thành công!")
+    return true;
+
+    
+    }
+    
+    

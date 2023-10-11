@@ -1,0 +1,131 @@
+﻿@model IEnumerable<Fashionality.Models.KhachHang>
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(255, 255, 255);
+    }
+
+    a {
+        color: #e767c7;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .register {
+        width: 500px;
+        padding: 16px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    .submit {
+        background-color: #4b4848;
+        color: white;
+        padding: 15px 18px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+        .submit:hover {
+            opacity: 1;
+        }
+
+    .login {
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: Fantasy;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: Courier;
+    }
+
+    p {
+        text-align: center;
+        font-family: courier;
+    }
+</style>
+
+<body>
+
+    <script src="~/Content/js/kiemtra.js"></script>
+
+
+    @using (Html.BeginForm())
+    {
+<div class="register">
+    <h1>FASHIONALITY STORE</h1>
+    <h2>ĐĂNG KÍ</h2>
+    <p> Vui lòng nhập thông tin để đăng kí tài khoản</p>
+    <hr>
+    <div>
+        <label for="username"><b>Họ và tên</b></label>
+        <input type="text" placeholder="Nhập tên" name="HoVaTen" id="username">
+    </div>
+    <div>
+        <label for="username"><b>Tên đăng nhập</b></label>
+        <input type="text" placeholder="Nhập tài khoản" name="TaiKhoan" id="username">
+    </div>
+    <div>
+        <label for="username"><b>Số Điện Thoại</b></label>
+        <input type="text" placeholder="SDT" name="SDT" id="number">
+    </div>
+    <div>
+        <label for="username"><b>Địa chỉ</b></label>
+        <input type="text" placeholder="Địa chỉ" name="DiaChi" id="username">
+    </div>
+   
+    <div>
+        <label for="password"><b>Mật khẩu</b></label>
+        <input type="password" placeholder="******" name="MatKhau" id="password">
+    </div>
+    <div>
+        <label for="password-repeat"><b>Nhập lại mật khẩu</b></label>
+        <input type="password" placeholder="******" name="password-repeat" id="password-repeat">
+    </div>
+    <hr>
+
+    <input type="checkbox" name="hobbies[]" value="travel" id="travel">
+    <label for="travel"><i>Để tạo tài khoản vui lòng đồng ý với ĐIỀU KHOẢN của chúng tôi </i></label>
+
+    <button type="submit" class="submit">Đăng ký</button>
+</div>
+        <div class="register login">
+            <p>Bạn đã có tài khoản <a href=@Url.Action("Login", "Home")>Đăng Nhập</a>.</p>
+        </div>
+    }
+</body>
+

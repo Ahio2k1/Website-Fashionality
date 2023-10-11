@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    div.gallery {
+        border: 1px solid #ccc;
+    }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 98%;
+            height: 450px;
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+        color: red;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
+
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+<body>
+    <div class="c-box_products">
+        <div class="container-extra">
+            <h1 class="c-title_block">
+                Liên hệ
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <aside class="col-sm-6 col-md-6">
+            <h5 class="heading space40"><span>GỬI LIÊN HỆ VỀ FASHIONALITY </span></h5>
+            <form method="post" action="" id="form" role="form" class="form ">
+                <div class="row">
+                    <div class="col-md-6 space20"> <input required="" type="text" class="input-md form-control" name="fullname" value="" placeholder="Nhập họ tên"> </div>
+                    <div class="col-md-6 space20"> <input type="email" class="input-md form-control" name="email" value="" placeholder="Email của bạn"> </div>
+                </div>
+                <div class="row"> <div class="col-md-6 space20"> <input class="input-md form-control" name="phone" placeholder="Điện thoại" maxlength="100" required="" type="text" value=""> </div> </div>
+                <div class="space20"> <input class="input-md form-control" name="address" placeholder="Địa chỉ" maxlength="1000" required="" type="text" value=""> </div>
+                <div class="space20">
+                    <select name="type" required="" class="form-control">
+                        <option value="">--- Chọn chủ đề liên hệ ---</option>
+                        <option value="1">Cần tư vấn mua hàng</option>
+                        <option value="2">Hỏi về tình trạng đơn hàng</option>
+                        <option value="3">Phàn nàn dịch vụ</option>
+                        <option value="4">Chủ đề khác</option>
+                    </select>
+                </div> <div class="space20"> <textarea required="" name="content" id="text" class="input-md form-control" rows="6" placeholder="Nội dung liên hệ" maxlength="1000"></textarea> </div>
+                <div class="space20">
+                    <div class="g-recaptcha" data-sitekey="6LeXPxITAAAAAKwnrLoGn5jP_0A0L6QYfGsuNvJ1">
+                        <div style="width: 304px; height: 78px;">
+                            <div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeXPxITAAAAAKwnrLoGn5jP_0A0L6QYfGsuNvJ1&amp;co=aHR0cHM6Ly80bWVuc2hvcC5jb206NDQz&amp;hl=vi&amp;v=9qx0v7NiOAe_XnW_ULNZm9e3&amp;size=normal&amp;cb=vlt2ddua8pyf" width="304" height="78" role="presentation" name="a-kis3h99093jn" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div>
+                            <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                        </div>
+                        <iframe style="display: none;"></iframe>
+                    </div> Bạn hãy check vào check box (ô chọn) để xác thực
+                </div>
+                <button type="submit" class="btn-black">Gửi liên hệ</button>
+            </form> <div class="clearfix"></div>
+        </aside>
+        <aside class="col-sm-6 col-md-6">
+            <div class="contact-info space50">
+                <h5 class="heading space40">
+                    <span>Thông tin liên hệ</span>
+                </h5> <div class="media-list">
+                    <div class="media">
+                        <i class="pull-left fa fa-home"></i>
+                        <div class="media-body"> <strong>Trụ sở chính:</strong><br> 56 Lê Văn Sỹ, P.14, Q.3, Tp.HCM </div>
+                    </div>
+                    <div class="media"> <i class="pull-left fa fa-phone"></i> <div class="media-body"> <strong>Điện thoại:</strong><br>	0123456789 </div> </div> <div class="media"> <i class="pull-left fa fa-envelope-o"></i> <div class="media-body"> <strong>Email:</strong><br>	info@fashionality.com </div> </div> <div class="contact-details"> <p> Website www.fashionality.com là website chuyên bán các dòng sản phẩm thời trang nam: Quần jean nam, quần tây, quần kaki, áo sơ mi, áo khoác, áo vest, áo thun, phụ kiện nam, giày dép nam...</p> </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!--------------------------------------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <footer class="container-fuild footer-contact">
+        <div class="container-extra ">
+            <div class="c-line"></div>
+            <div>
+                <div class="row no-gutters">
+                    <div class="col-lg-5 email_mobile">
+                        <div class="block_content discount_content">
+                            <p>Theo dõi chúng tôi để nhận thông tin mới</p>
+                            <form id="discount_form" method="post" name="newletter_form" action="task=save" onsubmit="javascript: return check_discount_form();">
+                                <input type="text" name="email" id="dc_email" value="Your email" class="txt-input" onfocus="this.value=''" onblur="if(this.value=='') this.value='Your email'">
+
+                                <input type="hidden" name="return" value="Lw==">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 c-footer_left">
+                        <div class="row c-row_list">
+                            <div class="col-lg-5 infor-wer c-box_menu" id="infor-wer2">
+                                <ul id="block-0" class="block-menu block-menu-default ">
+                                    <li class="menu-88 "><a href="" title="Chính sách vận chuyển">Chính sách vận chuyển</a></li>
+                                    <li class="menu-91 "><a href="" title="Chính sách thanh toán">Chính sách thanh toán</a></li>
+                                    <li class="menu-87 "><a href="" title="Chính sách hỗ trợ">Chính sách hỗ trợ</a></li>
+                                    <li class="menu-90 "><a href="" title="Hệ thống dịch vụ">Hệ thống dịch vụ</a></li>
+                                    <li class="menu-92 "><a href="" title="Size Guide">Size Guide</a></li>
+                                    <li class="menu-148 "><a href="" title="Liên hệ">Liên hệ</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-7 infor-wer infor_social" id="infor-wer2">
+                                <a href="" title="Facebook" class="c-social">Facebook</a>
+                                <a href="" title="Instagram" class="c-social">
+                                    Instagram
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 sub-email">
+                        <div class="block_content discount_content">
+                            <p>Theo dõi chúng tôi để nhận thông tin mới</p>
+                            <form id="discount_form" method="post" name="newletter_form" action="task=save" onsubmit="javascript: return check_discount_form();">
+                                <input type="text" name="email" id="dc_email" value="Your email" class="txt-input" onfocus="this.value=''" onblur="if(this.value=='') this.value='Your email'">
+
+                                <input type="hidden" name="return" value="Lw==">
+                            </form>
+                        </div>
+                        <p class="copy-right">© FASHIONALITY 2021.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>

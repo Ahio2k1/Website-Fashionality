@@ -1,0 +1,321 @@
+﻿@using Fashionality.Models
+
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <hr class=" hidden-xs">
+    <div id="page">
+        <main id="main" class="row-content c-box_root main-content">
+            <div class="container-extra c-box_product">
+                <div>
+                    <input type="hidden" value="sản phẩm được thêm vào giỏ hàng" id="alert_addcart">
+                    <input type="hidden" value="" id="url_root">
+
+                    <div class="row c-row_head">
+                            <div class="col-md-6 img-product my-gallery" id="col-img">
+                                <div class="c-box_all--images">
+                                    <div class="c-box--thumb_image hidden-md hidden-sm hidden-xs">
+
+                                    </div>
+
+                                    <div id="default-color">
+                                        <div class="swiper-container swipper-review">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img class="img-fluid" src=@Url.Content("~/Content/Fashionality/" + Model.Hinh)>
+                                                </div>
+                                            </div>
+                                            <!-- Add Pagination -->
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 body-product">
+                                <div id="body_fix_add_cart" style="position:relative; top: auto;" class="">
+                                    <div>
+                                        <h1 class="c-title_module hidden-xs">
+                                            @Model.TenSanPham                                                        <a href="javascript:void(0)" title="Yêu thích" class="c-btn_heart pull-right " onclick="save_post(2758)">
+                                                <i class="fa fa-heart-o"></i>
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                        </h1>
+                                        <p class="price-product hidden-xs">
+                                            <span class="price-no-discount ">
+                                                @Model.Gia VNĐ
+                                            </span>
+                                        </p>
+                                        <hr class=" hidden-xs">
+                                        <form action="#" method="post" class="form-add-cart" id="form-add-cart">
+                                            <div class="items-option c-item_choose--color">
+                                                <div class="title-item">Color</div>
+                                                <div class="items-center c-item_choose item-radio-choose">
+                                                    <a data-toggle="dropdown" class="c-color_product dropdown-toggle">
+                                                        <span class="c-color" style="background: #F5F5F5;  "></span>
+                                                        <span class="c-name_color">
+                                                            White
+                                                        </span>
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </a>
+
+                                                    <ul class="dropdown dropdown-menu extend_colorProduct in" id="extend_colorProduct">
+                                                        <li>
+                                                            <a href="javascript:void(0);" class="active" title="White">
+                                                                <span class="c-color" style="background: #F5F5F5;  "></span>
+                                                                <span class="c-name_color">
+                                                                    White
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="" class="" title=" Brown">
+                                                                <span class="c-color" style="background: #8B4513;  "></span>
+                                                                <span class="c-name_color">
+                                                                    Brown
+                                                                </span>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+                                                            <a href="" class="" title=" Beigi">
+                                                                <span class="c-color" style="background: #F5F5DC;  "></span>
+                                                                <span class="c-name_color">
+                                                                    Beigi
+                                                                </span>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+                                                            <a href="" class="" title=" Dark">
+                                                                <span class="c-color" style="background: #4F4F4F;  "></span>
+                                                                <span class="c-name_color">
+                                                                    Dark
+                                                                </span>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+                                                            <a href="" class="" title=" Pink">
+                                                                <span class="c-color" style="background: #FFAEB9;  "></span>
+                                                                <span class="c-name_color">
+                                                                    Pink
+                                                                </span>
+                                                            </a>
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="items-option hide">
+                                                <div class="title-item">Color</div>
+                                                <div class="items-center item-radio-choose">
+                                                    <select name="extend_color" id="extend_color" class="extend_color">
+                                                        <!--                                            -->
+                                                        <option value="64">White</option>
+                                                        <!--                                            -->
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="items-option ">
+                                                <input type="hidden" id="prd_combo" value="0">
+                                                <div class="title-item">Size</div>
+                                                <div class="items-center c-item_choose--size item-radio-choose">
+                                                    <a href="javascript:void(0)" class="c-name_size--choose c-size_2 " data-v="2" data-stock="1" data-combo="" data-item="">
+                                                        <span class="">
+                                                            M
+                                                        </span>
+                                                    </a>
+                                                    <a href="javascript:void(0)" class="c-name_size--choose c-size_3 " data-v="3" data-stock="1" data-combo="" data-item="">
+                                                        <span class="">
+                                                            L
+                                                        </span>
+                                                    </a>
+                                                    <a href="javascript:void(0)" class="c-name_size--choose c-size_4 last-size" data-v="4" data-stock="1" data-combo="" data-item="">
+                                                        <span class="">
+                                                            XL
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="items-center item-radio-choose hide">
+                                                    <select name="extend_size" id="extend_size" class="extend_size">
+                                                        <option value="">Chọn size</option>
+                                                        <option value="2">M</option>
+                                                        <option value="3">L</option>
+                                                        <option value="4">XL</option>
+                                                    </select>
+                                                </div>
+
+
+                                            </div>
+
+                                            <hr class="hidden-xs">
+
+                                            <div class="form-group view-guide hidden-xs">
+                                                <a class="c-btn c-btn_modal--size btn-click_ btn-click-11" data-toggle="modal" data-target="#modalFindSize">
+                                                    Tìm kích thước phù hợp
+                                                </a>
+                                            </div>
+
+                                            <div class="detail-task clearfix hidden-xs">
+                                                <a data-id="2758" class="c-btn btn-add_cart add-cart detail-add-cart" title="Thêm vào giỏ hàng">
+                                                    Thêm vào giỏ hàng
+                                                </a>
+                                            </div>
+                                        </form>
+
+                                        <div class="c-modal_size modal fade" id="modalFindSize" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-body">
+
+                                                        <div class="row c-row_calculator">
+                                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                                            <div class="col-lg-4 col-md-3 col-sm-3 c-col_image">
+                                                                <img src="" alt="Jebi T-Shirt" class="img-fluid">
+                                                            </div>
+                                                            <div class="col-lg-8 col-md-9 col-sm-9 c-col_find--size">
+                                                                <div class="c-box_form ">
+                                                                    <form action="" method="post">
+                                                                        <p class="c-title">
+                                                                            HỖ TRỢ TÌM CỠ PHÙ HỢP VỚI BẠN
+                                                                        </p>
+                                                                        <p class="c-sum">
+                                                                            Chúng tôi cùng bạn tìm ra kích cỡ phù hợp
+                                                                            dựa trên các chỉ số của bạn
+                                                                        </p>
+                                                                        <div class="c-group_info">
+                                                                            <p class="c-title sodo">
+                                                                                Số đo
+                                                                            </p>
+                                                                            <div class="c-group">
+                                                                                <label for=""></label> Chiều cao
+                                                                                <input type="text" id="info_height" name="info_height" class="c-input" value="">
+                                                                                <span class="c-unit">cm</span>
+                                                                            </div>
+                                                                            <div class="c-group">
+                                                                                <label for=""></label> Cân nặng
+                                                                                <input type="text" id="info_weight" name="info_weight" class="c-input" value="">
+                                                                                <span class="c-unit">kg</span>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <a href="javascript:void(0)" class="c-btn c-btn_sub--size" data-id="2758" title="XÁC NHẬN KÍCH CỠ PHÙ HỢP">
+                                                                            XÁC NHẬN KÍCH CỠ PHÙ HỢP
+                                                                        </a>
+
+                                                                    </form>
+                                                                </div>
+                                                                <div class="c-box_resuft--size">
+                                                                    <div class="c-info_size">
+                                                                        <p class="c-title_rs">
+                                                                            Kích thước phù hợp với bạn là
+                                                                        </p>
+                                                                        <p class="c-name_size">
+
+                                                                        </p>
+                                                                        <p class="c-sum">
+                                                                            Dựa trên các thông số chúng tôi tư vấn <br>
+                                                                            Size <strong class="c-size"></strong> có thể phù hợp với bạn
+                                                                        </p>
+                                                                        <p class="c--sold-out" style="display: none;">
+                                                                            Nhưng rất tiếc chúng tôi không còn Size này. Xin cảm ơn!
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="c-message_data"></div>
+                                                                    <div class="c-group_btn">
+                                                                        <a href="javascript:void(0)" class="c-btn c-btn_reset--size" title="BẮT ĐẦU LẠI">
+                                                                            BẮT ĐẦU LẠI
+                                                                        </a>
+
+                                                                        <a href="javascript:void(0)" class="c-btn c-btn_choose--size" title="THÊM SIZE">
+                                                                            THÊM SIZE
+                                                                        </a>
+                                                                        <a class="c-btn c-call_chat" title="Tư vấn thêm" href="javascript:void(0)">
+                                                                            Tư vấn thêm
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <!--                                                <div class="c-note_contact">-->
+                                                                <!---->
+                                                                <!--                                                </div>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="c-box_content">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a data-toggle="tab" href="#home">Chi tiết</a>
+                                            </li>
+                                            <li><a data-toggle="tab" href="#menu1">Thanh toán / vận chuyển</a></li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <div id="home" class="tab-pane fade in active">
+                                                                              <p>
+                                                    <span class="">Mã sản phẩm:</span>
+                                                    <span class="">@Model.MaSanPham</span>
+                                                </p>
+                                            </div>
+                                            <div id="menu1" class="tab-pane fade">
+                                                <p>
+                                                    Giao hàng toàn quốc<br>
+                                                    Giao hàng trong 3-5 ngày
+                                                </p>
+
+                                                <p>Giao hàng tiêu chuẩn đồng giá 30.000</p>
+
+                                                <p>Cách thức thanh toán: COD (nhận hàng rồi thanh toán)</p>
+
+                                                <p>Miễn phí đổi trả sản phẩm trong 7 ngày ( Không áp dụng với sản phẩm có giá ưu đãi)</p>
+
+                                                <p>
+                                                    <u><a href="#">Vui lòng ấn vào đây để biết thông tin chi tiết</a></u><br>
+                                                    &nbsp;
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c-mbox--add_cart hidden-lg hidden-md hidden-sm">
+                                        <div class="c-m--add_cart">
+                                            <div class="c-head">
+                                                <h2 class="c-title_module">Jebi T-Shirt</h2>
+                                                <div class="c-m--product-price" id="m--product-price">
+                                                    <span class="is-regular">
+
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="c-m--box_task">
+                                                <a class="c-btn c-btn_modal--size btn-click_ btn-click-11" data-toggle="modal" data-target="#modalFindSize">
+                                                    Tìm size phù hợp
+                                                </a>
+
+                                                <a data-id="2758" class="c-btn btn-add_cart add-cart detail-add-cart" title="Thêm vào giỏ hàng" href="javascript:void(0)">
+                                                    Thêm vào giỏ hàng
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                </div>
+
+
+
+
+
+</body>
+

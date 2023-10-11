@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Fashionality.Models.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!------------------------------------------------------------------PHẦN THÂN--------------------------------------------------------------------------->
+<div class="row-content pos-top">
+    <div class="block_banners banners_0 blocks_banner hidden-xs blocks0 block">
+        <div id="block-16" class="carousel slide slide-top block-banner block-banner-slideshow" data-interval="5000" data-ride="carousel" style="float:none;">
+            <ol class="carousel-indicators">
+                <li data-target="#block-16" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div id="banner-10" class="carousel-item item-slide item active">
+                    <a rel="nofollow" href=@Url.Action("SanPham","Home") title="Fashionality">
+                        <img class="d-block w-100" alt="Fashionality" src=@Url.Content("~/Content/image/banner.jpg") style="margin: auto;">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="block_banners banners_1 blocks_banner c-banner_mshow hidden-lg hidden-md hidden-sm blocks1 block">
+        <div id="block-17" class="block-banner block-banner-slideshow_page carousel slide" data-ride="carousel" style="float:none;">
+            <ol class="carousel-indicators">
+                <li data-target="#block-17" data-slide-to="0" class="active"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div id="banner-14" class="item active">
+                    <a target="_blank" rel="nofollow" href="sanpham.html" title="banner mobi - 3">
+                        <img class="img-responsive" alt="banner mobi - 3" src=@Url.Content("~/Content/image/banner.jpg")>
+                    </a>
+                    <div class="container">
+                        <div class="c-box_mcontent">
+                            <div>
+                                <div class="c-box_view">
+                                    <a href="sanpham.html" title="view" class="c-view_detail">
+                                        view
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------Clickmenu--------------------------------------------------------------------------------------------------------------->
+<!------------------------------SPNew--------------------------------------------------------------------------------------------------------------->
+<main id="main" class="row-content c-box_root ">
+    <div class="c-box_products">
+        <div class="container-extra">
+            <h2 class="c-title_block">
+                Sản phẩm mới
+            </h2>
+            <div>
+            <div class="row c-box_list">
+                <!------------------------------sp1----------------------------------->
+                
+                    @foreach (var item in Model.Take(6))
+                    {
+                        <div class="col-lg-4 col-md-6  col-sm-6 c-item  col-xs-6">
+                            <a href="@Url.Action("ChiTietSP","Home", new { id = item.MaSanPham }, null)" title="Wendy Polo" class="c-image">
+                                <img src=@Url.Content("~/Content/Fashionality/" + item.Hinh) alt="Wendy Polo" class="img-fluid img-first">
+
+                            </a>
+                            <h3 class="c-name">
+                                <a href="@Url.Action("ChiTietSP","Home", new { id = item.MaSanPham }, null)" title="Wendy Polo" class="name">
+                                    @item.TenSanPham
+                                </a>
+                            </h3>
+                            <p class="c-price">
+                                @item.Gia VND
+                            </p>
+                            <p class="c-box_color">
+                                <a class="c-color" href="" title="Wendy Polo" style="background:  #7EC0EE; "></a>
+                                <a class="c-color" href="" title="Wendy Polo" style="background:  #000000;  "></a>
+                                <a class="c-color" href="" title="Wendy Polo" style="background:  #191970;  "></a>
+                                <a class="c-color" href="" title="Wendy Polo" style="background:  #D3D3D3;  "></a>
+
+                            </p>
+                        </div>
+                    }
+                </div>
+                <!------------------------------sp2----------------------------------->
+
+
+
+                <div class="clearfix hidden-xs hidden-sm"></div>
+            </div>
+            <div class="container">
+                <div class="c-box_down">
+                    <a href=@Url.Action("SanPham","Home") title="Xem thêm">
+                        <span class="caret"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="c-box_infoMore hidden-xs hidden-sm">
+                <div class="c-content">
+                    Nhắn tin cho chúng tôi để nhận thêm                <a href="" title="thông tin"> thông tin</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Content -->
+    <!--    -->
+    <!-- Img banner-->
+    <!--    --><!---->
+
+
+</main>
+

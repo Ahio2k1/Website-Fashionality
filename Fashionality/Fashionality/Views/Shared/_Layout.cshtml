@@ -1,0 +1,201 @@
+﻿<!DOCTYPE
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=ht, initial-scale=1.0">
+    <title>Fashionality Store </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/home.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/shopcart.css" rel="stylesheet" />
+    <link href="~/Content/css/megamenu.css" rel="stylesheet" />
+    <link type="text/css" media="screen" href="~/Content/css/magiczoomplus.css" rel="stylesheet" />
+    <link type="text/css" media="screen" href="~/Content/css/detail.css" rel="stylesheet" />
+
+    <script src="~/Content/js/jsindex.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="page">
+        <div class="c-box_promotion--head">
+            <div class="container-extra">
+                <div class="c-description">
+                    <p style="text-align: center;">
+                        <span style="font-size:14px;">
+                            <a href=@Url.Action("SanPham","Home")><span style="color:#ffffff;">Giảm 10% cho đơn hàng đầu tiên </span></a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="c-container_fluid menu-top-fuild">
+                <nav class="navbar navbar-expand-lg navbar-light menu-top affix-top" data-spy="affix" data-offset-top="50">
+                    <div class="container-extra">
+                        <div class="navbar-collapse " id="navbarNav">
+                            <div id="cssmenu" class="row c-main_menu">
+                                <div class="c-box_logo col-lg-1">
+                                    <a href=@Url.Action("Index","Home") title="Fashionality Store" class="logo">
+                                        <img class="img-fluid" src=@Url.Content("~/Content/image/lg6.png")>
+                                    </a>
+                                </div>
+                                <ul class="nav navbar-nav main-menu col-lg-11">
+                                    <li class=" level0 first-item menu-item dropdown"><a class="" href=@Url.Action("BestSeller","Home") title="Sản phẩm mới" target="_self">BestSellers</a> </li>
+                                    <li class=" level0 menu-item dropdown">
+                                        <a class="" href=@Url.Action("SanPham","Home") title="Bộ sưu tập" target="_self">Bộ sưu tập</a>
+                                        <ul class="light-menu list-unstyled">
+                                            <li class=" level1 first-sitem sub-menu-item  dropdown-submenu  dropdown">
+                                                <a class="" href="@Url.Action("Shirts","Home")" title="Shirts/Top" target="_self">Shirts/Top</a>
+
+                                            </li>
+                                            <li class=" level1 mid-sitem sub-menu-item  dropdown-submenu  dropdown">
+                                                <a class="" href=@Url.Action("Pants","Home") title="Pants" target="_self">Pants</a>
+
+                                            </li>
+                                            <li class=" level1 mid-sitem sub-menu-item  dropdown-submenu  dropdown">
+                                                <a class="" href=@Url.Action("Hoodie","Home") title="Sweater/Hoodie" target="_self">Sweater/Hoodie</a>
+
+                                            </li>
+
+                                            <li class=" level1 mid-sitem sub-menu-item  dropdown-submenu  dropdown">
+                                                <a class="" href=@Url.Action("Accessories","Home") title="Accessories" target="_self">Accessories</a>
+                                                @*<ul class="light-menu list-unstyled">
+                                                    <li class=" level3 first-sitem sub-menu-item  dropdown-submenu  dropdown"><a class="" href=@Url.Action("Cap","Cap") title="Cap" target="_self">Cap</a></li>
+                                                    <li class=" level3 mid-sitem sub-menu-item  dropdown-submenu  dropdown"><a class="" href=@Url.Action("Bracelet","Bracelet") title="Bracelet" target="_self">Bracelet</a></li>
+                                                </ul>*@
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li class=" level0 menu-item dropdown"><a class="" href=@Url.Action("Sale","Home") title="Sale" target="_self">Sale</a></li>
+                                    <li class=" level0 menu-item dropdown">
+                                        <a class="" href=@Url.Action("About","Home") title="Về chúng tôi" target="_self">Về chúng tôi</a>
+
+                                    </li>
+                                    <li class=" level0 menu-item dropdown">
+                                        <a class="" href=@Url.Action("LienHe","Home") title="Combo" target="_self">Liên hệ </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="c-box_funs">
+                                <div class="c-item_child search_ c-box_search hidden-sm hidden-xs">
+                                    @*<a href="javacript:void(0)" title="Tìm kiếm" class="c-call_search">*@
+
+
+                                    @using (Html.BeginForm("Search", "Home"))
+                                    {
+                                        <input placeholder="Nhập từ khóa" style="height:24px" type="text" name="key" class="form-group form-inline" >
+
+                                        <input type="submit"  value="Tìm Kiếm"  class="form-group form-inline">
+                                    }
+                                    <div class="form-group form-inline">
+                                       
+
+
+
+                                    </div>
+
+
+                                    
+              
+                                </div>
+                            
+                                
+
+                                <div class="c-item_child c-other_funs">
+                                    <a href=@Url.Action("Login","Home") title="Đăng nhập" class="c-account c-btn hidden-sm hidden-xs">
+                                        <i class="form-group form-inline"></i>  Đăng nhập
+                                    </a>
+
+                                    <span href="javascript:void (0)" title="Giỏ hàng" class="c-btn_cart c-btn">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <span class="c-amount_cart" style="font-size: 12px"></span>
+                                        <div class="c-alert_addCart hide"></div>
+                                    </span>
+
+                                    <div class="submenu view-cart-hea c-box_viewCart " style="position: absolute;">
+                                        <a href="javascript:void(0)" title="close" class="c-close_cart">
+                                            x
+                                        </a>
+                                        <p class="c-note_empty">
+                                            Bạn chưa có sản phẩm nào trong giỏ hàng
+                                            <br><a href=@Url.Action("GioHang","Home") title="Xem Giỏ Hàng" class="c-account c-btn hidden-sm hidden-xs">Xem chi tiết giỏ hàng
+                                        </p>
+                                        </a>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                </nav>
+            </div>
+        </header>
+        @RenderBody()
+        <footer class="container-fuild footer-contact">
+            <div class="container-extra ">
+                <div class="c-line"></div>
+                <div>
+                    <div class="row no-gutters">
+                        <div class="col-lg-5 email_mobile">
+                            <div class="block_content discount_content">
+                                <p>Theo dõi chúng tôi để nhận thông tin mới</p>
+                                <form id="discount_form" method="post" name="newletter_form" action="task=save" onsubmit="javascript: return check_discount_form();">
+                                    <input type="text" name="email" id="dc_email" value="Your email" class="txt-input" onfocus="this.value=''" onblur="if(this.value=='') this.value='Your email'">
+
+                                    <input type="hidden" name="return" value="Lw==">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 c-footer_left">
+                            <div class="row c-row_list">
+                                <div class="col-lg-5 infor-wer c-box_menu" id="infor-wer2">
+                                    <ul id="block-0" class="block-menu block-menu-default ">
+                                        <li class="menu-88 "><a href="" title="Chính sách vận chuyển">Chính sách vận chuyển</a></li>
+                                        <li class="menu-91 "><a href="" title="Chính sách thanh toán">Chính sách thanh toán</a></li>
+                                        <li class="menu-87 "><a href="" title="Chính sách hỗ trợ">Chính sách hỗ trợ</a></li>
+                                        <li class="menu-90 "><a href="" title="Hệ thống dịch vụ">Hệ thống dịch vụ</a></li>
+                                        <li class="menu-92 "><a href="" title="Size Guide">Size Guide</a></li>
+                                        <li class="menu-148 "><a href="" title="Liên hệ">Liên hệ</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-7 infor-wer infor_social" id="infor-wer2">
+                                    <a href="" title="Facebook" class="c-social">Facebook</a>
+                                    <a href="" title="Instagram" class="c-social">
+                                        Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 sub-email">
+                            <div class="block_content discount_content">
+                                <p>Theo dõi chúng tôi để nhận thông tin mới</p>
+                                <form id="discount_form" method="post" name="newletter_form" action="task=save" onsubmit="javascript: return check_discount_form();">
+                                    <input type="text" name="email" id="dc_email" value="Your email" class="txt-input" onfocus="this.value=''" onblur="if(this.value=='') this.value='Your email'">
+
+                                    <input type="hidden" name="return" value="Lw==">
+                                </form>
+                            </div>
+                            <p class="copy-right">© FASHIONALITY 2021.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
+
+    </div>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/menu.js"></script>
+    <script src="~/Content/js/js_templates.js"></script>
+    <script src="~/Content/js/search.js"></script>
+    <script src="~/Content/js/discount.js"></script>
+
+</body>
+</html>
